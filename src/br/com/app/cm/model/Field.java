@@ -68,4 +68,21 @@ public class Field {
     boolean secureNeighborhood() {
         return neighbors.stream().noneMatch(n -> n.mine);
     }
+
+    void setMine() {
+        mine = true;
+    }
+
+    public boolean isMarked() {
+        return marked;
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public boolean isClose() {
+        return !isOpen();
+    }
+
 }
