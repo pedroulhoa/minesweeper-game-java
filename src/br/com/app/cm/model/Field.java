@@ -93,12 +93,20 @@ public class Field {
         return marked;
     }
 
+    void setOpen(boolean open) {
+        this.open = open;
+    }
+
     public boolean isOpen() {
         return open;
     }
 
     public boolean isClose() {
         return !isOpen();
+    }
+
+    public boolean isMine() {
+        return mine;
     }
 
     public int getLine() {
