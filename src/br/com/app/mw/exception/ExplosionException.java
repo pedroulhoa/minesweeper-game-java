@@ -1,4 +1,4 @@
-package br.com.app.cm.exception;
+package br.com.app.mw.exception;
 
 public class ExplosionException extends RuntimeException {
 

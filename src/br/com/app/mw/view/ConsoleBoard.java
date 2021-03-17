@@ -1,8 +1,8 @@
-package br.com.app.cm.view;
+package br.com.app.mw.view;
 
-import br.com.app.cm.exception.ExitException;
-import br.com.app.cm.exception.ExplosionException;
-import br.com.app.cm.model.Board;
+import br.com.app.mw.exception.ExitException;
+import br.com.app.mw.exception.ExplosionException;
+import br.com.app.mw.model.Board;
 
 import java.util.Arrays;
 import java.util.Iterator;

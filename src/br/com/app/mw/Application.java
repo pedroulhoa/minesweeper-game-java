@@ -1,7 +1,7 @@
-package br.com.app.cm;
+package br.com.app.mw;
 
-import br.com.app.cm.model.Board;
-import br.com.app.cm.view.ConsoleBoard;
+import br.com.app.mw.model.Board;
+import br.com.app.mw.view.ConsoleBoard;
 
 public class Application {
 

@@ -1,6 +1,6 @@
-package br.com.app.cm.model;
+package br.com.app.mw.model;
 
-import br.com.app.cm.exception.ExplosionException;
+import br.com.app.mw.exception.ExplosionException;
 
 import java.util.ArrayList;
 import java.util.List;

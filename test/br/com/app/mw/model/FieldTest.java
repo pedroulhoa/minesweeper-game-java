@@ -1,6 +1,6 @@
-package br.com.app.cm.model;
+package br.com.app.mw.model;
 
-import br.com.app.cm.exception.ExplosionException;
+import br.com.app.mw.exception.ExplosionException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
