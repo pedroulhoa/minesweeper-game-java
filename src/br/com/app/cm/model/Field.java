@@ -1,5 +1,7 @@
 package br.com.app.cm.model;
 
+import br.com.app.cm.exception.ExplosionException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,5 +39,33 @@ public class Field {
         } else {
             return false;
         }
+    }
+
+    void toggleMark() {
+        if (!open) {
+            marked = !marked;
+        }
+    }
+
+    boolean open() {
+        if (!open && !marked) {
+            open = true;
+
+            if (mine) {
+                throw new ExplosionException();
+            }
+
+            if (secureNeighborhood()) {
+                neighbors.forEach(n -> n.open());
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    boolean secureNeighborhood() {
+        return neighbors.stream().noneMatch(n -> n.mine);
     }
 }
