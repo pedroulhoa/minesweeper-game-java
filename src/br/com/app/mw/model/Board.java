@@ -80,25 +80,27 @@ public class Board {
     }
 
     public String toString() {
+        final String YELLOW = "\033[0;33m";
+        final String RESET = "\033[0m";
         StringBuilder sb = new StringBuilder();
 
         sb.append("  ");
         for (int c = 0; c < columns; c++) {
-            sb.append(" ");
-            sb.append(c);
-            sb.append(" ");
+            sb.append(RESET + " ");
+            sb.append(YELLOW + c);
+            sb.append(RESET + " ");
         }
 
         sb.append("\n");
 
         int i = 0;
         for (int l = 0; l < lines; l++) {
-            sb.append(l);
-            sb.append(" ");
+            sb.append(YELLOW + l);
+            sb.append(RESET + " ");
             for (int c = 0; c < columns; c++) {
-                sb.append(" ");
-                sb.append(fields.get(i));
-                sb.append(" ");
+                sb.append(RESET + " ");
+                sb.append(RESET + fields.get(i));
+                sb.append(RESET + " ");
                 i++;
             }
             sb.append("\n");
