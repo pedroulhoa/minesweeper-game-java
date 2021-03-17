@@ -69,6 +69,22 @@ public class Field {
         return neighbors.stream().noneMatch(n -> n.mine);
     }
 
+    boolean goalAchieved() {
+        boolean unveiled = !mine && open;
+        boolean protectedField = mine && marked;
+        return unveiled || protectedField;
+    }
+
+    long minesInTheNeighborhood() {
+        return neighbors.stream().filter(n -> n.mine).count();
+    }
+
+    void restart() {
+        open = false;
+        mine = false;
+        marked = false;
+    }
+
     void setMine() {
         mine = true;
     }
@@ -85,4 +101,19 @@ public class Field {
         return !isOpen();
     }
 
+    public int getLine() {
+        return line;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public String toString() {
+        if (marked) return "x";
+        else if (open && mine) return "*";
+        else if (open && minesInTheNeighborhood() > 0) return Long.toString(minesInTheNeighborhood());
+        else if (open) return " ";
+        else return "?";
+    }
 }
